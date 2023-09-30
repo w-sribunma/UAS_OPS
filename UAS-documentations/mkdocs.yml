@@ -1,0 +1,8 @@
+site_name: UAS Operations Documentation
+site_url: https://github.com/w-sribunma/UAS_OPS
+nav:
+  - Home: index.md
+  - Hardware: hardware.md
+  - X500 Build Parts: X500-model.md
+
+theme: readthedocs
