@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/w-sribunma/UAS_OPS/resources/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>UAS resources - UAS Operations Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "UAS resources";
+        var mkdocs_page_input_path = "resources.md";
+        var mkdocs_page_url = "/w-sribunma/UAS_OPS/resources/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UAS Operations Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../FAA-Part107/">FAA Part 107</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../X500-model/">X500 Build Parts</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">UAS resources</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UAS Operations Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">UAS resources</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="uas-operation-education-documentation">UAS Operation Education Documentation</h1>
+<p>This document serves as a suggestion for UAV Educational Resources an individual should take to get started in research in UAS. This document is laid out in a way we suggest you follow, starting from the prerequisite requirements. The section “Mission-specific task” is listed to suggest a few useful tools to tackle specific tasks required for your mission</p>
+<h1 id="prerequisites">Prerequisites</h1>
+<p>To get started on research involving UAS, we suggest following this path to familiarize yourself with the materials needed for UAS research. We recommend following the courses in this order, depending on the nature of your research. A lot of UAS operations can be done through Python codes under a Linux-based Ubuntu environment. However, C++ language can be used for efficiency and further applications in Robotics.</p>
+<p>Note that most autopilot source codes are written in C++, which means that any alteration done directly with the autopilot will require sufficient knowledge of the coding language. Therefore, for mission-specific tasks, sufficient knowledge in C++ will be useful for future, more advanced involvements.</p>
+<p>Python 3 </p>
+<ul>
+<li><a href="https://app.theconstructsim.com/courses/58">The Constructsim Python 3</a></li>
+<li><a href="https://www.udemy.com/course/complete-python-bootcamp/">Udemy Python3</a>
+<a href="https://app.theconstructsim.com/courses/40">Linux for Robotics</a>
+(Optional for early stage) <a href="https://app.theconstructsim.com/courses/59">C++ for Robotics</a></li>
+</ul>
+<h1 id="useful-additional-tools">Useful Additional Tools</h1>
+<p><a href="https://www.udacity.com/course/version-control-with-git--ud123">Udacity Version Control with Git</a></p>
+<ul>
+<li>It is a good practice to have version control repositories when working in a team and documenting each research progress. We suggest individuals know the basics of Git to be able to work collaboratively in a research team.</li>
+</ul>
+<p><a href="https://www.udemy.com/course/docker-kubernetes-the-practical-guide/">Udemy Docker</a>
+<a href="https://www.docker.com/">Docker</a> is a useful environment for setting up containers and images for each environment and can be applied to create a fast, repeatable environment setup. It allows containers to be built, shared, and run on any device.</p>
+<h1 id="robot-operating-software">Robot Operating Software</h1>
+<p>Robot Operating Software 2 (ROS2) serves as a set of software libraries and tools for building robot applications, allowing fast, open-source tools to complete any robotic computation, including in applications to UAS operations. The official tutorial page for ROS2 humble can be found here. Please note that your ROS2 version can vary, but we recommend selecting a Long-term support version such as the ROS2 “Humble.”</p>
+<p>ROS2:
+(Highly Recommended) ROS2 Basics: <a href="https://www.udemy.com/course/ros2-for-beginners/">Udemy ROS2 for Beginners</a>
+This course covers all the ROS2 basic knowledge, including the introductions to nodes, topics, services, parameters, etc. This introduces you to writing your first ROS2 code for future use in communicating between UAS and various other components.</p>
+<p><a href="https://www.udemy.com/course/ros2-tf-urdf-rviz-gazebo/">Udemy ROS2 Applications to Gazebo/RViz</a>
+This course is recommended to further strengthen the knowledge of ROS2 applications in a simulator environment, introducing you to topics of TF, URDF, RVIZ, and gazebo. All of these are required to work with a simulated model, its orientation and dynamics, and the simulator environment.</p>
+<h1 id="other-mission-specific-tasks">Other Mission-Specific Tasks</h1>
+<p>Path Planning and Maze Navigation with ROS2</p>
+<ul>
+<li>This course is useful to introduce multiple popular and useful algorithms in concepts, including localization, mapping, path planning, and motion planning, all of which are useful for maze application and navigation in applications with computer vision.</li>
+<li><a href="https://www.udemy.com/course/ros2-path-planning-and-maze-solving-with-computer-vision/?deal_code=ST22OT72523&amp;lid=&amp;utm_campaign=230727_Student-MX_EM-Promo_Career-Milestone_T2_NEW&amp;utm_content=udemy_braze.95b320ae6ee4cb300b238c1dbaadec95&amp;utm_medium=Email&amp;utm_source=email-pro&amp;utm_term=3x1_REVIEW">Udemy ROS2 Path Planning and Maze Solving with Computer Vision</a></li>
+</ul>
+<p>NAV2 Stack with Ros2 for basic waypoint planning</p>
+<ul>
+<li>NAV2 is a library that allows for stable perception, planning, control, localization, and visualization of robotic autonomous systems. This can be applied through ROS sensors and provide an efficient navigation behavior that is worth knowing as a base operation for Waypoint A to Waypoint B autonomous navigation.</li>
+<li><a href="https://www.udemy.com/course/ros2-nav2-stack/?kw=slam&amp;src=sac">Udemy ROS2- NAV2 Stack</a> </li>
+</ul>
+<p>Gazebo</p>
+<ul>
+<li>Gazebo is a software commonly used for robotics simulations that supports connections to ROS environments. It is very useful to use Gazebo for simulations related to UAS models and software for any preventable bugs or unstable algorithms.</li>
+<li><a href="https://app.theconstructsim.com/courses/78">Mastering Gazebo Simulator</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../X500-model/" class="btn btn-neutral float-left" title="X500 Build Parts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../X500-model/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
