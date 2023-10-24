@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/w-sribunma/UAS_OPS/hardware/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Hardware - UAS Operations Documentation</title>
+    <title>Components - UAS Operations Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Hardware";
+        var mkdocs_page_name = "Components";
         var mkdocs_page_input_path = "hardware.md";
         var mkdocs_page_url = "/w-sribunma/UAS_OPS/hardware/";
       </script>
@@ -21,6 +21,8 @@
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
       <script>hljs.highlightAll();</script> 
 </head>
 
@@ -51,8 +53,13 @@
                 <li class="toctree-l1"><a class="reference internal" href="../FAA-Part107/">FAA Part 107</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../px4-gz-docker/">Simulator</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Hardware</span></p>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Hardware</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Components</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#flight-controller-fc">Flight Controller (FC)</a>
     </li>
@@ -65,11 +72,9 @@
     <li class="toctree-l2"><a class="reference internal" href="#telemetry-radios">Telemetry Radios</a>
     </li>
     </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../X500-model/">X500 Build Parts</a>
-                </li>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../X500-model/">X500 Build Parts</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -85,7 +90,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Hardware</li>
+          <li class="breadcrumb-item">Hardware</li>
+      <li class="breadcrumb-item active">Components</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -133,7 +139,7 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../FAA-Part107/" class="btn btn-neutral float-left" title="FAA Part 107"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../px4-gz-docker/" class="btn btn-neutral float-left" title="Simulator"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../X500-model/" class="btn btn-neutral float-right" title="X500 Build Parts">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -157,7 +163,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../FAA-Part107/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../px4-gz-docker/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../X500-model/" style="color: #fcfcfc">Next &raquo;</a></span>
