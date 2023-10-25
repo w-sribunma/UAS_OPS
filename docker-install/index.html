@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/w-sribunma/UAS_OPS/px4-gz-docker/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/w-sribunma/UAS_OPS/docker-install/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>PX4-Gazebo-Docker - UAS Operations Documentation</title>
+    <title>Installing Docker - UAS Operations Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "PX4-Gazebo-Docker";
-        var mkdocs_page_input_path = "px4-gz-docker.md";
-        var mkdocs_page_url = "/w-sribunma/UAS_OPS/px4-gz-docker/";
+        var mkdocs_page_name = "Installing Docker";
+        var mkdocs_page_input_path = "docker-install.md";
+        var mkdocs_page_url = "/w-sribunma/UAS_OPS/docker-install/";
       </script>
     
     <!--[if lt IE 9]>
@@ -55,11 +55,11 @@
               </ul>
               <p class="caption"><span class="caption-text">Simulator</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../docker-install/">Installing Docker</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">PX4-Gazebo-Docker</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Installing Docker</a>
     <ul class="current">
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../px4-gz-docker/">PX4-Gazebo-Docker</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Hardware</span></p>
@@ -84,7 +84,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Simulator</li>
-      <li class="breadcrumb-item active">PX4-Gazebo-Docker</li>
+      <li class="breadcrumb-item active">Installing Docker</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -93,51 +93,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="simulator">Simulator</h1>
-<p>Running Gazebo Garden with PX4 Autopilot via offboard control commands is set up in our sample repository. The simulator is set up using Docker container and implement a ROS2 and Gazebo Garden bridge for the ROS2 communication protocal to allow ROS2 scripts usage.</p>
-<p><img alt="Gazebo" src="../figures/gz_sim_x500.png" /></p>
-<h1 id="repository">Repository</h1>
-<p>The <a href="https://github.com/w-sribunma/GZ-PX4-docker">PX4 Gazebo Docker Repository</a> contains a run script for installation of most required dependencies required to run offboard control algorithm for quadrotors. The repository requires an Ubuntu operating system with Gazebo Garden installed. This can be done using respective dual boots with Ubuntu Operating systems. <a href="https://www.xda-developers.com/dual-boot-windows-11-linux/">Dual-boot Ubuntu environment instructions</a></p>
-<p>Navigate to the respective branch and clone the repository to download and clone the software package.</p>
-<pre><code class="language-py">git clone https://github.com/w-sribunma/GZ-PX4-docker -b &lt;branch name&gt;
+                <h1 id="docker">Docker</h1>
+<p><a href="https://www.docker.com/">Docker</a> allows consistency in running environments to allow a quick setup and containerize applications.</p>
+<h1 id="installing-docker-engine">Installing Docker Engine</h1>
+<p>For Linux Ubuntu computers, <a href="https://docs.docker.com/engine/install/">installing Docker Engine</a> can be done by navigating to the <a href="https://docs.docker.com/engine/install/ubuntu/">installation for Ubuntu page</a>.</p>
+<p>Uninstalling potentially conflicting packages:</p>
+<pre><code>for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 </code></pre>
-<h1 id="dependencies">Dependencies</h1>
-<p><a href="https://github.com/gazebosim/ros_gz">ROS2 and Gazebo bridge</a> should be built from source. Please follow the link to navigate to the respective github repository and install the ros_gz package from source.</p>
-<p>In the GZ-PX4-docker directory, navigate to <code>./get_src.sh</code> and make make necessary adjustments to any linked repository.</p>
-<h1 id="building-the-simulator">Building the simulator</h1>
-<p>In the cloned package, build Docker image</p>
-<pre><code class="language-py">docker compose build
+<p>Installing via apt repository</p>
+<ol>
+<li>Set up Docker's <code>apt</code> repository</li>
+</ol>
+<pre><code># Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# Add the repository to Apt sources:
+echo \
+  &quot;deb [arch=&quot;$(dpkg --print-architecture)&quot; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  &quot;$(. /etc/os-release &amp;&amp; echo &quot;$VERSION_CODENAME&quot;)&quot; stable&quot; | \
+  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+sudo apt-get update
 </code></pre>
-<p>Accessing the terminal shell for the setup service inside docker container, run the following command in two separate containers to start the container with a shell.</p>
-<pre><code>./run_dev.sh
+<ol>
+<li>Installing the Docker packages</li>
+</ol>
+<pre><code>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 </code></pre>
-<pre><code class="language-py">docker exec -u user -it px4_gz-px4_gz-1 terminator
-</code></pre>
-<p>This action to open up a new terminator shell contained inside a docker container. Split the docker into 3 different panels or tabs.</p>
-<ul>
-<li>Terminal 1:<ul>
-<li>Navigate to px4 directory using <code>cd px4</code></li>
-<li>Build px4_sitl from the PX4 Autopilot <code>make px4_sitl</code> when running this container shell for the first time.</li>
-<li>To start the PX4 Gazebo Garden instance, run the <a href="https://docs.px4.io/main/en/sim_gazebo_gz/">PX4 autostart</a> command <code>PX4_SYS_AUTOSTART=4001 PX4_GZ_MODEL=x500_lidar ./build/px4_sitl_default/bin/px4 -i 1</code> to start the gazebo software with the PX4 X500 model with onboard 360 degrees lidar sensor. Note models can be changed by modifying <code>PX4_GZ_MODEL=&lt;model name&gt;</code> </li>
-</ul>
-</li>
-<li>Terminal 2:<ul>
-<li>To run a DDS agent for Gazebo PX4 instance communication with ROS2, run <code>MicroXRCEAgent udp4 -p 8888</code></li>
-</ul>
-</li>
-<li>Terminal 3:<ul>
-<li>This terminal serves to run any ROS2 packages required for the mission. Navigate to ros2_ws directory <code>cd ros2_ws</code> and build ROS2 workspace <code>colcon build</code></li>
-<li>Source ros2 environment <code>source install/setup.bash</code></li>
-<li>From the built repository under px4_offboard package, run the desired offboard script with <code>ros2 run px4_offboard [script name]</code> to communicate between simulator and ROS2 environment and use offboard control inputs with PX4 Autopilot.</li>
-</ul>
-</li>
-</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../docker-install/" class="btn btn-neutral float-left" title="Installing Docker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../hardware/" class="btn btn-neutral float-right" title="Components">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../FAA-Part107/" class="btn btn-neutral float-left" title="FAA Part 107"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../px4-gz-docker/" class="btn btn-neutral float-right" title="PX4-Gazebo-Docker">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -160,10 +151,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../docker-install/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../FAA-Part107/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../hardware/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../px4-gz-docker/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
