@@ -115,15 +115,15 @@
 </code></pre>
 <p>This action to open up a new terminator shell contained inside a docker container. Split the docker into 3 different panels or tabs.</p>
 <ul>
-<li>Terminal 1:<ul>
+<li>
+<p>Terminal 1:</p>
+<ul>
 <li>Navigate to px4 directory using <code>cd px4</code></li>
 <li>Build px4_sitl from the PX4 Autopilot <code>make px4_sitl</code> when running this container shell for the first time.</li>
 <li>To start the PX4 Gazebo Garden instance, run the <a href="https://docs.px4.io/main/en/sim_gazebo_gz/">PX4 autostart</a> command <code>PX4_SYS_AUTOSTART=4001 PX4_GZ_MODEL=x500_lidar ./build/px4_sitl_default/bin/px4 -i 1</code> to start the gazebo software with the PX4 X500 model with onboard 360 degrees lidar sensor. </li>
 <li>Note models can be changed by modifying <code>PX4_GZ_MODEL=&lt;model name&gt;</code></li>
+<li>To start PX4_sitl with a different world model, set <code>PX4_GZ_WORLD=&lt;world name&gt;</code></li>
 </ul>
-</li>
-<li>
-<p>To start PX4_sitl with a different world model, set <code>PX4_GZ_WORLD=&lt;world name&gt;</code></p>
 </li>
 <li>
 <p>Terminal 2:</p>
