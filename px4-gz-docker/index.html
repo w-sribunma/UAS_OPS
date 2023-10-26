@@ -101,6 +101,8 @@
 <p>Navigate to the respective branch and clone the repository to download and clone the software package.</p>
 <pre><code class="language-py">git clone https://github.com/w-sribunma/GZ-PX4-docker -b &lt;branch name&gt;
 </code></pre>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xgbNEAuxa1I?si=OqXjr1uHUDgKuz3p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 <h1 id="dependencies">Dependencies</h1>
 <p><a href="https://github.com/gazebosim/ros_gz">ROS2 and Gazebo bridge</a> should be built from source. Please follow the link to navigate to the respective github repository and install the ros_gz package from source.</p>
 <p>In the GZ-PX4-docker directory, navigate to <code>./get_src.sh</code> and make make necessary adjustments to any linked repository.</p>
@@ -122,7 +124,7 @@
 <li>Build px4_sitl from the PX4 Autopilot <code>make px4_sitl</code> when running this container shell for the first time.</li>
 <li>To start the PX4 Gazebo Garden instance, run the <a href="https://docs.px4.io/main/en/sim_gazebo_gz/">PX4 autostart</a> command <code>PX4_SYS_AUTOSTART=4001 PX4_GZ_MODEL=x500_lidar ./build/px4_sitl_default/bin/px4 -i 1</code> to start the gazebo software with the PX4 X500 model with onboard 360 degrees lidar sensor. </li>
 <li>Note models can be changed by modifying <code>PX4_GZ_MODEL=&lt;model name&gt;</code></li>
-<li>To start PX4_sitl with a different world model, set <code>PX4_GZ_WORLD=&lt;world name&gt;</code></li>
+<li>To start PX4_sitl with a different world model, set <code>PX4_GZ_WORLD=&lt;world name&gt;</code> in the autostart command</li>
 </ul>
 </li>
 <li>
