@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/w-sribunma/UAS_OPS/hardware/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/w-sribunma/UAS_OPS/px4-ros2/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Components - UAS Operations Documentation</title>
+    <title>Working with PX4 and ROS2 - UAS Operations Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Components";
-        var mkdocs_page_input_path = "hardware.md";
-        var mkdocs_page_url = "/w-sribunma/UAS_OPS/hardware/";
+        var mkdocs_page_name = "Working with PX4 and ROS2";
+        var mkdocs_page_input_path = "px4-ros2.md";
+        var mkdocs_page_url = "/w-sribunma/UAS_OPS/px4-ros2/";
       </script>
     
     <!--[if lt IE 9]>
@@ -54,29 +54,19 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Simulator</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../docker-install/">Installing Docker</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../px4-gz-docker/">PX4-Gazebo-Docker</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../px4-ros2/">Working with PX4 and ROS2</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Working with PX4 and ROS2</a>
+    <ul class="current">
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Hardware</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Components</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#flight-controller-fc">Flight Controller (FC)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#power-module">Power Module</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#rc-receivers-rx">RC Receivers (RX)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#transmitter-tx">Transmitter (TX)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#telemetry-radios">Telemetry Radios</a>
-    </li>
-    </ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware/">Components</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../X500-model/">X500 Build Parts</a>
                   </li>
@@ -95,8 +85,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Hardware</li>
-      <li class="breadcrumb-item active">Components</li>
+          <li class="breadcrumb-item">Simulator</li>
+      <li class="breadcrumb-item active">Working with PX4 and ROS2</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -105,47 +95,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="drone-hardwares">Drone Hardwares</h1>
-<p>This section will discuss some main hardware required for drone building and RC UAS operational components. </p>
-<h2 id="flight-controller-fc">Flight Controller (FC)</h2>
-<p>Flight controller (often called FC) is an essential component for any UAS aircraft, consisting of internal sensors required for UAS's detection of its orientation and movements in space. The FC is the center of all UAS computations and communications between its components and any ground control station connecting to the UAS, allowing processing of critical mission parameters and connected sensors.</p>
-<p>Some of the common sensors onboard the FC includes:</p>
-<!-- * The inertial measurement unit (IMU)..... -->
-<ul>
-<li>Accelerometers<ul>
-<li>Provide an instantaneous acceleration data for the drone's motion</li>
-</ul>
-</li>
-<li>Gyroscopic sensor<ul>
-<li>A gyro sensor works to provide rotational motion awareness for the UAS</li>
-</ul>
-</li>
-<li>Barometer<ul>
-<li>Utilizes atmospheric pressure to determine altitude</li>
-</ul>
-</li>
-<li>Magnetometer<ul>
-<li>Obtain magnetic heading and compass data</li>
-</ul>
-</li>
-</ul>
-<p>Note that most FC may contain multiple of the same sensors for redundency.</p>
-<h2 id="power-module">Power Module</h2>
-<p>Power Modules are what connects a battery to the Flight Controllers, Motors, or some other components. It has an internal voltage regularator, ensuring that a constant 5V power can be used to power an applicable FC.</p>
-<p>Prior to selecting power module, we suggest checking the specification of your UAS components to ensure compatibility and sufficient power outputs.</p>
-<h2 id="rc-receivers-rx">RC Receivers (RX)</h2>
-<p>Receivers are crucial for any RC operations and safety measures. Receivers are what will communicate with an RC transmitter to allow manual command inputs from Pilot to the UAS. We recommend all UAS operations to have a manual RC overrides and kill switch set up for safety.</p>
-<p>The receivers are directly connected to the FC, communicating with the UAS through different transmission protocals</p>
-<h2 id="transmitter-tx">Transmitter (TX)</h2>
-<p>Transmitters are remote controllers that remotely communicate with the receivers to provide inputs for the UAS. </p>
-<h2 id="telemetry-radios">Telemetry Radios</h2>
-<p>Telemetry radios transmit messages among the UAS to its respective Ground Control Station (GCS) the GCS can receive messages such as attitude, altitude, GPS data, and speed. This is useful when performing outdoor UAS operations where flight data can be read by ground pilots.</p>
+                <h2 id="working-with-px4-with-ros-2">Working with PX4 with ROS 2</h2>
+<p>PX4 Autopilot allows full control and communication between ROS2 and PX4 through subscribing and publishing ROS2 nodes to interect with PX4 uORB topics. PX4 <a href="https://docs.px4.io/main/en/ros/ros2_comm.html">official documentation</a> contains a detailed structure on how the architecture works. This page will provide a brief description on working with PX4 V1.14 release through the new uXRCE-DDS communications middleware and provide additional information regarding acquiring ROS2 topics from Pixhawk flight computer sensors through serial or other protocols.</p>
+<h1 id="uxrce-dds-middleware">uXRCE-DDS middleware</h1>
+<p>This [uXRCE-DDSs). The image below shows a great representation of how the communication protocal works through uXRCE-DDS, allowing communication between PX4 and ROS2 in its respective companion computer.</p>
+<p><img alt="uXRCE Architecture" src="../figures/architecture_xrce-dds_ros2.png" /></p>
+<h2 id="setup">Setup</h2>
+<p>This section will go through setting up the required dependencies for acquiring communications from Pixhawk to a companion computer. Note that this is tested using PX4 V1.14 and ROS2 Humble on an Ubuntu 22.04 system. PX4 Documentations contain some instructions, but we have narrowed down some instructions that worked during our installation. This will contain some repreated instruction from the official documentation along with some of our minor adjustments as neccesarry.</p>
+<p>This require an installation of PX4 Autopilot if you are planning to use a Simulator for this.</p>
+<h1 id="companion-computer-agent-setup">Companion Computer Agent Setup</h1>
+<p>On your Linux-based companion computer, you can setup and install Micro XRCE-DDS Agent to allow the communication with PX4 using ROS2 on your computer. This can be done by running the following script on your terminal.</p>
+<pre><code class="language-bash">git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
+cd Micro-XRCE-DDS-Agent
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+sudo ldconfig /usr/local/lib/
+</code></pre>
+<h1 id="pixhawk-client-setup">Pixhawk Client Setup</h1>
+<p>On the Pixhawk or other flight controller flashed with PX4 v1.14, you can start the uXRCE-DDS client. This runs autonomatically when flight controller port is set to output MAVLINK messages.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../px4-ros2/" class="btn btn-neutral float-left" title="Working with PX4 and ROS2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../X500-model/" class="btn btn-neutral float-right" title="X500 Build Parts">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../px4-gz-docker/" class="btn btn-neutral float-left" title="PX4-Gazebo-Docker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../hardware/" class="btn btn-neutral float-right" title="Components">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -168,10 +144,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../px4-ros2/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../px4-gz-docker/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../X500-model/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../hardware/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
