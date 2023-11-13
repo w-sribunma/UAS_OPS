@@ -103,8 +103,10 @@
 <h2 id="setup">Setup</h2>
 <p>This section will go through setting up the required dependencies for acquiring communications from Pixhawk to a companion computer. Note that this is tested using PX4 V1.14 and ROS2 Humble on an Ubuntu 22.04 system. PX4 Documentations contain some instructions, but we have narrowed down some instructions that worked during our installation. This will contain some repreated instruction from the official documentation along with some of our minor adjustments as neccesarry.</p>
 <p>This require an installation of PX4 Autopilot if you are planning to use a Simulator for this.</p>
+<h1 id="flight-controller-client-setup">Flight Controller Client Setup</h1>
+<p>On a flight controller flashed with PX4 v1.14, you can start the uXRCE-DDS client. This runs autonomatically when flight controller port is set to output MAVLINK messages by enabling MAVLINK config on the vehicle parameter lists.</p>
 <h1 id="companion-computer-agent-setup">Companion Computer Agent Setup</h1>
-<p>On your Linux-based companion computer, you can setup and install Micro XRCE-DDS Agent to allow the communication with PX4 using ROS2 on your computer. This can be done by running the following script on your terminal.</p>
+<p>On your Linux-based companion computer, you can setup and install Micro XRCE-DDS Agent to allow the communication with PX4 using ROS2 on your computer. This can be done by running the following script on your terminal to build dependencies for the agent from source.</p>
 <pre><code class="language-bash">git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
 cd Micro-XRCE-DDS-Agent
 mkdir build
@@ -114,8 +116,23 @@ make
 sudo make install
 sudo ldconfig /usr/local/lib/
 </code></pre>
-<h1 id="pixhawk-client-setup">Pixhawk Client Setup</h1>
-<p>On the Pixhawk or other flight controller flashed with PX4 v1.14, you can start the uXRCE-DDS client. This runs autonomatically when flight controller port is set to output MAVLINK messages.</p>
+<p>With those agents set up, you can start an agent on your companion computer to connect with a respective uXRCE-DDS client.</p>
+<ul>
+<li>For those running on a simulator:</li>
+</ul>
+<pre><code class="language-bash">MicroXRCEAgent udp4 -p 8888
+</code></pre>
+<ul>
+<li>For those connected through a serial port through USB (note "ttyUSB*" can vary depending on the amount of USB connections to your computer):</li>
+</ul>
+<pre><code class="language-bash">MicroXRCEAgent serial --dev /dev/ttyUSB0 -b 921600
+</code></pre>
+<ul>
+<li>For those connected through a serial port with Raspberry Pi terminal</li>
+</ul>
+<pre><code class="language-bash">sudo MicroXRCEAgent serial --dev /dev/serial0 -b 921600
+</code></pre>
+<p>Once the agent is started for the correct client set-up, you should be able to view ROS2 topics through <code>ros2 topic list</code></p>
               
             </div>
           </div><footer>
