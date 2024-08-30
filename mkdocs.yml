@@ -2,7 +2,19 @@ site_name: UAS Operations Documentation
 site_url: https://github.com/w-sribunma/UAS_OPS
 nav:
   - Home: index.md
-  - Hardware: hardware.md
-  - X500 Build Parts: X500-model.md
+  - UAS resources: resources.md
+  - FAA Part 107: FAA-Part107.md
+  - Simulator: 
+    - Installing Docker: docker-install.md
+    - PX4-Gazebo-Docker: px4-gz-docker.md
+    - Working with PX4 and ROS2: px4-ros2.md
+  - Hardware: 
+    - Components: hardware.md
+    - X500 Build Parts: X500-model.md
 
-theme: readthedocs
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust

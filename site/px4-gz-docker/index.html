@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/w-sribunma/UAS_OPS/px4-gz-docker/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>PX4-Gazebo-Docker - UAS Operations Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "PX4-Gazebo-Docker";
+        var mkdocs_page_input_path = "px4-gz-docker.md";
+        var mkdocs_page_url = "/w-sribunma/UAS_OPS/px4-gz-docker/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UAS Operations Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../resources/">UAS resources</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../FAA-Part107/">FAA Part 107</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Simulator</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../docker-install/">Installing Docker</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">PX4-Gazebo-Docker</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../px4-ros2/">Working with PX4 and ROS2</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Hardware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware/">Components</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../X500-model/">X500 Build Parts</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UAS Operations Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Simulator</li>
+      <li class="breadcrumb-item active">PX4-Gazebo-Docker</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="simulator">Simulator</h1>
+<p>Running Gazebo Garden with PX4 Autopilot via offboard control commands is set up in our sample repository. The simulator is set up using Docker container and implement a ROS2 and Gazebo Garden bridge for the ROS2 communication protocal to allow ROS2 scripts usage.</p>
+<p><img alt="Gazebo" src="../figures/gz_sim_x500.png" /></p>
+<h1 id="repository">Repository</h1>
+<p>The <a href="https://github.com/w-sribunma/GZ-PX4-docker">PX4 Gazebo Docker Repository</a> contains a run script for installation of most required dependencies required to run offboard control algorithm for quadrotors. The repository requires an Ubuntu operating system with Gazebo Garden installed. This can be done using respective dual boots with Ubuntu Operating systems. <a href="https://www.xda-developers.com/dual-boot-windows-11-linux/">Dual-boot Ubuntu environment instructions</a></p>
+<p>Navigate to the respective branch and clone the repository to download and clone the software package.</p>
+<pre><code class="language-py">git clone https://github.com/w-sribunma/GZ-PX4-docker -b &lt;branch name&gt;
+</code></pre>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xgbNEAuxa1I?si=OqXjr1uHUDgKuz3p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<ul>
+<li>Note that this demo is recorded on Oct 25, 2023 with the following system <ul>
+<li>Linux Ubuntu 22.04</li>
+<li>Memory: 32 GB</li>
+<li>GPU: NVIDIA Mesa Intel Graphics<ul>
+<li>GPU Driver: Nvidia Driver Version 525</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="dependencies">Dependencies</h1>
+<p><a href="https://github.com/gazebosim/ros_gz">ROS2 and Gazebo bridge</a> should be built from source. Please follow the link to navigate to the respective github repository and install the ros_gz package from source.</p>
+<p>In the GZ-PX4-docker directory, navigate to <code>./get_src.sh</code> and make make necessary adjustments to any linked repository.</p>
+<h1 id="building-the-simulator">Building the simulator</h1>
+<p>In the cloned package, build Docker image</p>
+<pre><code class="language-py">docker compose build
+</code></pre>
+<p>Accessing the terminal shell for the setup service inside docker container, run the following command in two separate containers to start the container with a shell.</p>
+<pre><code>./run_dev.sh
+</code></pre>
+<pre><code class="language-py">docker exec -u user -it px4_gz-px4_gz-1 terminator
+</code></pre>
+<p>This action to open up a new terminator shell contained inside a docker container. Split the docker into 3 different panels or tabs.</p>
+<ul>
+<li>
+<p>Terminal 1:</p>
+<ul>
+<li>Navigate to px4 directory using <code>cd px4</code></li>
+<li>Build px4_sitl from the PX4 Autopilot <code>make px4_sitl</code> when running this container shell for the first time.</li>
+<li>To start the PX4 Gazebo Garden instance, run the <a href="https://docs.px4.io/main/en/sim_gazebo_gz/">PX4 autostart</a> command <code>PX4_SYS_AUTOSTART=4001 PX4_GZ_MODEL=x500_lidar ./build/px4_sitl_default/bin/px4 -i 1</code> to start the gazebo software with the PX4 X500 model with onboard 360 degrees lidar sensor. </li>
+<li>Note models can be changed by modifying <code>PX4_GZ_MODEL=&lt;model name&gt;</code></li>
+<li>To start PX4_sitl with a different world model, set <code>PX4_GZ_WORLD=&lt;world name&gt;</code> in the autostart command</li>
+</ul>
+</li>
+<li>
+<p>Terminal 2:</p>
+<ul>
+<li>To run a DDS agent for Gazebo PX4 instance communication with ROS2, run <code>MicroXRCEAgent udp4 -p 8888</code></li>
+</ul>
+</li>
+<li>Terminal 3:<ul>
+<li>This terminal serves to run any ROS2 packages required for the mission. Navigate to ros2_ws directory <code>cd ros2_ws</code> and build ROS2 workspace <code>colcon build</code></li>
+<li>Source ros2 environment <code>source install/setup.bash</code></li>
+<li>From the built repository under px4_offboard package, run the desired offboard script with <code>ros2 run px4_offboard [script name]</code> to communicate between simulator and ROS2 environment and use offboard control inputs with PX4 Autopilot.</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../docker-install/" class="btn btn-neutral float-left" title="Installing Docker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../px4-ros2/" class="btn btn-neutral float-right" title="Working with PX4 and ROS2">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../docker-install/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../px4-ros2/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

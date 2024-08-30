@@ -21,6 +21,8 @@
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
       <script>hljs.highlightAll();</script> 
 </head>
 
@@ -44,14 +46,30 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware</a>
+                <li class="toctree-l1"><a class="reference internal" href="../resources/">UAS resources</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../FAA-Part107/">FAA Part 107</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Simulator</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../docker-install/">Installing Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../px4-gz-docker/">PX4-Gazebo-Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../px4-ros2/">Working with PX4 and ROS2</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Hardware</span></p>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">X500 Build Parts</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware/">Components</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">X500 Build Parts</a>
     <ul class="current">
     </ul>
-                </li>
+                  </li>
               </ul>
       </div>
     </div>
@@ -67,6 +85,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Hardware</li>
       <li class="breadcrumb-item active">X500 Build Parts</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -81,7 +100,7 @@
 <p>We have deviated from the previous year's PX4Vision drone due to the discontinuation of the development kit by Holybro.</p>
 <h1 id="holybro-x500">Holybro X500</h1>
 <p><a href="https://holybro.com/products/x500-v2-kits?_pos=2&amp;_sid=8666a2b5e&amp;_ss=r">Holybro's X500</a> quadrotor frame provides sufficient stability along with the capacity to carry neccessary onboard sensors.</p>
-<p><img alt="X500" src="figures/X500frame.png" /></p>
+<p><img alt="X500" src="../figures/X500frame.png" /></p>
 <p>Vehicle Specification:</p>
 <ul>
 <li>Wheelbase: 500mm</li>
@@ -101,7 +120,7 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../hardware/" class="btn btn-neutral float-left" title="Hardware"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../hardware/" class="btn btn-neutral float-left" title="Components"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
